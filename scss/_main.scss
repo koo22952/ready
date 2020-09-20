@@ -1,0 +1,191 @@
+@mixin d-flex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  background-color: #f5f4f1;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 64px;
+  padding: 0 24px;
+  background-color: rgba(245, 244, 241, 0.25);
+  backdrop-filter: blur(12px) saturate(100%);
+  .nav-container {
+    @include d-flex(space-between);
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    &__left {
+    }
+    &__right {
+      @include d-flex();
+      .icon-list {
+        @include d-flex();
+        .count {
+          display: block;
+          height: 28px;
+          width: 28px;
+          line-height: 28px;
+          background-color: #995cbf;
+          border-radius: 50%;
+          color: #fff;
+          font-weight: 700;
+          text-align: center;
+        }
+
+        li {
+          margin-right: -5px;
+        }
+        img {
+          height: auto;
+          width: 28px;
+          height: 28px;
+        }
+      }
+
+      &--btn {
+        display: block;
+        margin-right: 16px;
+        margin-left: 21px;
+        padding: 4px 12px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08),
+          0 1px 1px 0 rgba(0, 0, 0, 0.15);
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 64px;
+  padding: 0 24px;
+  .hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    max-height: 100%;
+    min-height: 70vh;
+    margin-bottom: 24px;
+    border-radius: 32px;
+    background-color: #4c5dc1;
+    &__title {
+      @include d-flex();
+      height: 240px;
+      &__container {
+        max-width: 320px;
+        text-align: center;
+        z-index: 1;
+        > div {
+          margin-bottom: 8px;
+          color: #d1d5ff;
+          font-size: 12px;
+          letter-spacing: 4px;
+        }
+        > h1 {
+          font-size: 40px;
+          line-height: 48px;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+
+    &__img {
+      position: relative;
+      top: -160px;
+      margin-bottom: -200px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .intro {
+    z-index: 0;
+    display: flex;
+    padding-top: 120px;
+    padding-bottom: 16px;
+    justify-content: center;
+    &__container {
+      position: relative;
+      max-width: 560px;
+      margin: 0 24px;
+      flex: 1;
+    }
+    &-text {
+      margin-bottom: 48px;
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &-pencil,
+    &-strikes2,
+    &-strikes {
+      max-width: 100%;
+      height: auto;
+      position: absolute;
+    }
+    &-pencil {
+      width: 168px;
+      top: 100px;
+      right: -180px;
+    }
+    &-strikes2 {
+      width: 218.5px;
+      left: -230px;
+      bottom: 150px;
+    }
+
+    &-strikes {
+      width: 124px;
+      left: -160px;
+      bottom: 80px;
+    }
+  }
+  .calendar,
+  .meeting {
+    max-width: 1440px;
+    padding: 160px 0;
+    overflow: hidden;
+  }
+  .mission {
+    display: block;
+    overflow: hidden;
+  }
+}
+
+footer {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  .footer-container {
+    @include d-flex(space-between);
+    margin: 120px 24px 48px;
+    flex: 1;
+    .footer-left,
+    .footer-right {
+      color: #1b1d2a;
+      font-weight: 700;
+      > a {
+        margin-left: 16px;
+      }
+    }
+    .footer-right {
+      opacity: 0.5;
+    }
+  }
+}
