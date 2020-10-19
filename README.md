@@ -2,4 +2,4 @@
 
 題目：https://ready.so/?ref=lapaninja
 
-呈現網址：
+呈現網址： https://koo22952.github.io/ready/
